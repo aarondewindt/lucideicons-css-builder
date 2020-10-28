@@ -1,0 +1,17 @@
+
+.{{ class_prefix }} {
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+}
+
+{% for icon in icons %}
+.{{ class_prefix }}-{{ icon[0] }} {
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    background-color: black;
+    -webkit-mask-image: url("data:image/svg+xml;base64,{{ icon[1] }}");
+    mask-image: url("data:image/svg+xml;base64,{{ icon[1] }}");
+}
+{% endfor %}
